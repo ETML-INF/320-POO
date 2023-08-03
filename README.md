@@ -32,7 +32,7 @@ Cours POO
 
 ### Séquence 5
 
-- Test 1
+- **Test 1 (théorique)**
 - Encapsulation / Visibilité
 - Properties : attribut privé sans _ , accesseur / modificateur explicites
 - Ajouter des contraintes / conversions à des attributs d'un exercice précédent
@@ -43,7 +43,7 @@ Cours POO
 - 
 ### Séquence 7
 
-- Test 2
+- **Test 2 (pratique, tests unitaires à corriger)**
 - Lib
 
 ### Séquence 8
