@@ -3,7 +3,7 @@ Cours POO
 
 ## Planning
 
-### Séquence 1 [details](sequences/01.md)
+### [Séquence 1](sequences/01.md)
 
 - Hello + Cadre
 - Refresh prog / terminologie (kahoot)
