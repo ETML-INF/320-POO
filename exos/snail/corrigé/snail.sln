@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "snail", "snail\snail.csproj", "{116E1034-134D-41B3-B29F-762EDB8D5C58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "snails", "snails\snails.csproj", "{FCEB827D-81A6-4B8C-90F8-E8580FD39DB8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{116E1034-134D-41B3-B29F-762EDB8D5C58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{116E1034-134D-41B3-B29F-762EDB8D5C58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{116E1034-134D-41B3-B29F-762EDB8D5C58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{116E1034-134D-41B3-B29F-762EDB8D5C58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCEB827D-81A6-4B8C-90F8-E8580FD39DB8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCEB827D-81A6-4B8C-90F8-E8580FD39DB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCEB827D-81A6-4B8C-90F8-E8580FD39DB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCEB827D-81A6-4B8C-90F8-E8580FD39DB8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {50BED74D-2D92-4F04-8C33-E78E78164E2C}
+	EndGlobalSection
+EndGlobal
