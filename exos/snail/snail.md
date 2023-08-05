@@ -4,11 +4,13 @@ Le but de cet exercice est de découvrir les concepts de classe et d'objet au tr
 
 ## Etape 1
 
-Réalisez avec vos connaissances actuelles un programme en mode console qui fait bouger un escargot sur l'écran comme [ceci](snail.zip) .
+Voici [un programme](snail.zip) en mode console qui fait bouger un escargot sur l'écran.
 
 L'escargot `_@_ö` part à gauche de l'écran avec 50 points de vie. Chaque déplacement vers la droite lui coûte un point de vie. A zéro points de vie, il est mort `____` et le programme s'arrête.
 
-Voici quelques liens qui pourraient vous être utiles durant cette étape:
+Etablissons ensemble son pseudo-code.
+
+Réalisez-le ensuite avec vos connaissances actuelles et l'aide ces quelques liens:
 
 [Console.Clear](https://learn.microsoft.com/en-us/dotnet/api/system.console.clear?view=net-6.0)  
 [Console.CursorVisible](https://learn.microsoft.com/en-us/dotnet/api/system.console.cursorvisible?view=net-6.0)  
@@ -24,12 +26,22 @@ Discutons des différentes manières dont vous avez réalisé ce programme.
 
 Transformons votre code ensemble pour y introduire une **classe** `Snail` que l'on utilisera pour fabriquer (instancier) un **objet** `snail`
 
-## Ensuite
-
 Assurez-vous que vous avez bien compris les concepts de classe et d'objet.  
 **Rappel:** quand vous avez "bien compris" quelque chose, cela signifie que vous vous sentez capable de l'expliquer à quelqu'un.  
 
-Démontrez votre maîtrise en réalisant l'un ou l'autre des défis suivants:
+## Etape 4
+
+Modifiez votre code pour réaliser une course à deux escargots. Pour mettre du suspense dans la course, faites en sorte qu'un escargot décide parfois de prendre une pause au lieu d'avancer.  
+Sa décision sera aléatoire:
+```
+Random rand = new Random(); // à placer au bon endroit dans votre code !!!
+
+if (rand.Next(1,10) == 1) ...
+
+```
+## Ensuite, si vous avez encore du temps à disposition
+
+Réalisez l'un ou l'autre des défis suivants:
 
 1. L'escargot fait demi-tour lorsqu'il atteint le bord de l'écran
 1. Il fait demi-tour à chaque fois qu'on tape une touche
