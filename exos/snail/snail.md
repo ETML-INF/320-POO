@@ -4,7 +4,7 @@ Le but de cet exercice est de découvrir les concepts de classe et d'objet au tr
 
 ## Etape 1
 
-Voici [un programme](snail.zip) en mode console qui fait bouger un escargot sur l'écran.
+Voici [un programme](../../assets/01-01-snail.zip) en mode console qui fait bouger un escargot sur l'écran.
 
 L'escargot `_@_ö` part à gauche de l'écran avec 50 points de vie. Chaque déplacement vers la droite lui coûte un point de vie. A zéro points de vie, il est mort `____` et le programme s'arrête.
 
