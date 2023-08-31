@@ -11,7 +11,7 @@ Cours POO
 - Démo simu complète
 - Modification "facile" (couleur fourmi)
   
-### Séquence 2
+### [Séquence 2](sequences/02.md)
 
 - Classe / Objet / Namespace / Terminologie
 - Collections
