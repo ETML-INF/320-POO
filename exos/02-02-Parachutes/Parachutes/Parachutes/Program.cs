@@ -9,9 +9,10 @@ Console.CursorVisible = false;
 Console.WindowHeight = SCREEN_HEIGHT;
 Console.WindowWidth = SCREEN_WIDTH;
 
-// Afficher l'avion
+// Créer l'avion avec un parachutiste
 Plane plane = new Plane();
-plane.draw();
+Para bob = new Para("Bob");
+plane.board(bob);
 
 while (true)
 {

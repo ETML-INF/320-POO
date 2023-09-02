@@ -23,6 +23,7 @@ namespace Parachutes
         };
 
         public int x;
+        private Para parachutist;
 
         /// <summary>
         /// Constructor
@@ -58,6 +59,15 @@ namespace Parachutes
             {
                 x++;
             }
+        }
+
+        /// <summary>
+        /// Take a parachustist on board
+        /// </summary>
+        /// <param name="para"></param>
+        public void board(Para para)
+        {
+            this.parachutist = para;
         }
     }
 }
