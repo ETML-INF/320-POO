@@ -16,6 +16,7 @@ ConsoleKeyInfo keyPressed;
 Plane plane = new Plane();
 Para bob = new Para("Bob");
 plane.board(bob);
+bob.isInAPlane = true;
 
 while (true)
 {

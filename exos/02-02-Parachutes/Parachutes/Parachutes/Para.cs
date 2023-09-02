@@ -31,6 +31,7 @@ namespace Parachutes
         public int x;
         public int altitude;
         public bool parachuteIsOpen;
+        public bool isInAPlane;
 
         /// <summary>
         /// Constructor
