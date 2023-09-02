@@ -41,5 +41,21 @@ namespace Parachutes
         {
             this.name = name;
         }
+
+        internal void update()
+        {
+        }
+
+        internal void draw()
+        {
+            if (!this.isInAPlane)
+            {
+                for (int i = 0; i < viewNoParachute.Length; i++)
+                {
+                    Console.SetCursorPosition(x, Config.SCREEN_HEIGHT-this.altitude+i);
+                    Console.Write(viewNoParachute[i]);
+                }
+            }
+        }
     }
 }

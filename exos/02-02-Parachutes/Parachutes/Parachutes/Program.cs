@@ -1,13 +1,10 @@
 ﻿using Parachutes;
 
-const int SCREEN_HEIGHT = 40;
-const int SCREEN_WIDTH = 150;
-
 // Initialiser la console
 Console.Clear();
 Console.CursorVisible = false;
-Console.WindowHeight = SCREEN_HEIGHT;
-Console.WindowWidth = SCREEN_WIDTH;
+Console.WindowHeight = Config.SCREEN_HEIGHT;
+Console.WindowWidth = Config.SCREEN_WIDTH;
 
 // Pour les interactions utilisateur
 ConsoleKeyInfo keyPressed;
@@ -24,12 +21,22 @@ while (true)
     if (Console.KeyAvailable) // L'utilisateur a pressé une touche
     {
         keyPressed = Console.ReadKey(false);
-        if (keyPressed.Key == ConsoleKey.Escape) break; // Game Over
+        switch (keyPressed.Key)
+        {
+            case ConsoleKey.Escape:
+                Environment.Exit(0);
+                break;
+            case ConsoleKey.Spacebar:
+                plane.dropParachutist();
+                break;
+        }
     }
 
-    plane.update(SCREEN_WIDTH);
+    plane.update();
+    bob.update();
 
     plane.draw();
+    bob.draw();
 
     Thread.Sleep(100);
 }

@@ -8,6 +8,7 @@ namespace Parachutes
 {
     class Plane
     {
+        // Display attributes
         // dimensions of the ASCII representation of the plane
         public const int WIDTH = 28;
         public const int HEIGHT = 6;
@@ -22,7 +23,9 @@ namespace Parachutes
             @"        \_____|_____/   |  "
         };
 
+        // Model attributes
         public int x;
+        public int altitude;
         private Para parachutist;
 
         /// <summary>
@@ -31,6 +34,7 @@ namespace Parachutes
         public Plane()
         {
             x = 0;
+            altitude = Config.SCREEN_HEIGHT;
         }
 
         /// <summary>
@@ -38,7 +42,6 @@ namespace Parachutes
         /// </summary>
         public void draw()
         {
-            Console.SetCursorPosition(x, 0);
             for (int i = 0; i < view.Length; i++)
             {
                 Console.SetCursorPosition(x, i);
@@ -50,9 +53,9 @@ namespace Parachutes
         /// Move the plane
         /// </summary>
         /// <param name="window_width"></param>
-        public void update(int window_width)
+        public void update()
         {
-            if (x >= window_width)
+            if (x >= Config.SCREEN_WIDTH)
             {
                 x = 0;
             } else
@@ -68,6 +71,13 @@ namespace Parachutes
         public void board(Para para)
         {
             this.parachutist = para;
+        }
+
+        internal void dropParachutist()
+        {
+            parachutist.x = x;
+            parachutist.altitude = this.altitude-HEIGHT;
+            parachutist.isInAPlane = false;
         }
     }
 }
