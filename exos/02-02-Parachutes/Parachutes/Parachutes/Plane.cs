@@ -26,7 +26,7 @@ namespace Parachutes
         // Model attributes
         public int x;
         public int altitude;
-        private Para parachutist;
+        private List<Para> parachutists;
 
         /// <summary>
         /// Constructor
@@ -35,6 +35,7 @@ namespace Parachutes
         {
             x = 0;
             altitude = Config.SCREEN_HEIGHT;
+            parachutists = new List<Para>();
         }
 
         /// <summary>
@@ -58,7 +59,8 @@ namespace Parachutes
             if (x >= Config.SCREEN_WIDTH)
             {
                 x = 0;
-            } else
+            }
+            else
             {
                 x++;
             }
@@ -70,11 +72,14 @@ namespace Parachutes
         /// <param name="para"></param>
         public void board(Para para)
         {
-            this.parachutist = para;
+            this.parachutists.Add(para);
         }
 
         internal void dropParachutist()
         {
+            if (parachutists.Count == 0) { return; }
+            Para parachutist = parachutists.First();
+            parachutists.RemoveAt(0);
             parachutist.x = x;
             parachutist.altitude = this.altitude;
             parachutist.isInAPlane = false;
