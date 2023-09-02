@@ -9,8 +9,8 @@ namespace Parachutes
     class Plane
     {
         // dimensions of the ASCII representation of the plane
-        const int PLANE_WIDTH = 28;
-        const int PLANE_HEIGHT = 6;
+        public const int WIDTH = 28;
+        public const int HEIGHT = 6;
 
         private string[] view =
         {
@@ -22,19 +22,19 @@ namespace Parachutes
             @"        \_____|_____/   |  "
         };
 
-        private int _x;
+        public int x;
 
         public Plane()
         {
-            _x = 0;
+            x = 0;
         }
 
         public void draw()
         {
-            Console.SetCursorPosition(_x, 0);
+            Console.SetCursorPosition(x, 0);
             for (int i = 0; i < view.Length; i++)
             {
-                Console.SetCursorPosition(_x, i);
+                Console.SetCursorPosition(x, i);
                 Console.Write(view[i]);
             }
         }
