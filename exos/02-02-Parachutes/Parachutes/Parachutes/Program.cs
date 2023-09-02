@@ -9,6 +9,9 @@ Console.CursorVisible = false;
 Console.WindowHeight = SCREEN_HEIGHT;
 Console.WindowWidth = SCREEN_WIDTH;
 
+// Pour les interactions utilisateur
+ConsoleKeyInfo keyPressed;
+
 // Créer l'avion avec un parachutiste
 Plane plane = new Plane();
 Para bob = new Para("Bob");
@@ -17,6 +20,11 @@ plane.board(bob);
 while (true)
 {
     Console.Clear();
+    if (Console.KeyAvailable) // L'utilisateur a pressé une touche
+    {
+        keyPressed = Console.ReadKey(false);
+        if (keyPressed.Key == ConsoleKey.Escape) break; // Game Over
+    }
 
     plane.update(SCREEN_WIDTH);
 
@@ -25,5 +33,4 @@ while (true)
     Thread.Sleep(100);
 }
 
-Console.ReadKey();
 
