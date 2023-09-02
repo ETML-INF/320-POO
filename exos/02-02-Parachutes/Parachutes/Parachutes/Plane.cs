@@ -76,7 +76,7 @@ namespace Parachutes
         internal void dropParachutist()
         {
             parachutist.x = x;
-            parachutist.altitude = this.altitude-HEIGHT;
+            parachutist.altitude = this.altitude;
             parachutist.isInAPlane = false;
         }
     }

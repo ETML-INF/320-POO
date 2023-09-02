@@ -9,8 +9,13 @@ namespace Parachutes
     class Para
     {
         // View attributes
+        private const int PARA_HEIGHT = 6;
+
         private string[] viewNoParachute =
         {
+            @"     ",
+            @"     ",
+            @"     ",
             @"  o  ",
             @" /░\ ",
             @" / \ ",
@@ -42,8 +47,18 @@ namespace Parachutes
             this.name = name;
         }
 
+        /// <summary>
+        /// Make the parachutist move
+        /// </summary>
         internal void update()
         {
+            if (!isInAPlane)
+            {
+                if (altitude > PARA_HEIGHT) // il est en l'air
+                {
+                    altitude -= 3 ; // il tombe vite
+                }
+            }
         }
 
         internal void draw()
@@ -52,7 +67,7 @@ namespace Parachutes
             {
                 for (int i = 0; i < viewNoParachute.Length; i++)
                 {
-                    Console.SetCursorPosition(x, Config.SCREEN_HEIGHT-this.altitude+i);
+                    Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this.altitude + i);
                     Console.Write(viewNoParachute[i]);
                 }
             }
