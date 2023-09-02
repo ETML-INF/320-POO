@@ -7,4 +7,11 @@ Console.Clear();
 Console.CursorVisible = false;
 Console.WindowHeight = SCREEN_HEIGHT;
 Console.WindowWidth = SCREEN_WIDTH;
+
+
+Plane plane = new Plane();
+plane.draw();
+
+
 Console.ReadKey();
+
