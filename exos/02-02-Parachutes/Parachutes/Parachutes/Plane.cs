@@ -24,11 +24,17 @@ namespace Parachutes
 
         public int x;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public Plane()
         {
             x = 0;
         }
 
+        /// <summary>
+        /// Render
+        /// </summary>
         public void draw()
         {
             Console.SetCursorPosition(x, 0);
@@ -36,6 +42,21 @@ namespace Parachutes
             {
                 Console.SetCursorPosition(x, i);
                 Console.Write(view[i]);
+            }
+        }
+
+        /// <summary>
+        /// Move the plane
+        /// </summary>
+        /// <param name="window_width"></param>
+        public void update(int window_width)
+        {
+            if (x >= window_width)
+            {
+                x = 0;
+            } else
+            {
+                x++;
             }
         }
     }
