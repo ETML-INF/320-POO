@@ -52,11 +52,26 @@ namespace Parachutes
         /// </summary>
         internal void update()
         {
-            if (!isInAPlane)
+            if (!isInAPlane) // Il a sauté
             {
                 if (altitude > PARA_HEIGHT) // il est en l'air
                 {
-                    altitude -= 3 ; // il tombe vite
+                    if (parachuteIsOpen)
+                    {
+                        altitude -= 1; // il tombe lentement
+                    }
+                    else
+                    {
+                        altitude -= 3; // il tombe vite
+                    }
+                    // Décision d'ouvrir le parachute
+                    if (altitude < Config.SCREEN_HEIGHT / 2)
+                    {
+                        parachuteIsOpen = true;
+                    }
+                } else // il est au sol
+                {
+                    parachuteIsOpen = false;
                 }
             }
         }
@@ -65,10 +80,11 @@ namespace Parachutes
         {
             if (!this.isInAPlane)
             {
-                for (int i = 0; i < viewNoParachute.Length; i++)
+                string[] view = parachuteIsOpen ? viewWithParachute : viewNoParachute ;
+                for (int i = 0; i < view.Length; i++)
                 {
                     Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this.altitude + i);
-                    Console.Write(viewNoParachute[i]);
+                    Console.Write(view[i]);
                 }
             }
         }
