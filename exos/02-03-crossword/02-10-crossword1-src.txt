@@ -7,6 +7,6 @@ class, smoking
 public, espace ouvert à tous
 private, partie intime
 internal, par défaut
-new, expansion mémoire
+new, allocation mémoire
 constructeur, méthode spéciale pour créer une instance/un objet
 this, moi
