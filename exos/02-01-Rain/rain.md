@@ -1,8 +1,8 @@
-![enemy.png](enemy.png)
+![rain.png](rain.png)
 
-# Ennemi
-Imaginons qu’on veuille programmer le comportement d’un ennemi qui lance des missiles..
-Comment utiliser la POO à bon escient dans ce cas de figure ?
+# Pluie
+Imaginons qu’on veuille programmer le comportement d’un nuage qui
+fait pleuvoir des gouttes d’eau...
 
 ## Conception
 Plutôt que d’être coincé devant un écran, il est judicieux de réfléchir avec 
@@ -21,28 +21,19 @@ position (nouvelle ou pas)
 Ceci va impacter le choix des attributs et méthodes qui vont suivre...
 
 ### Noter sur un POSTIT différent le nom de chaque classe (en haut du postit)
-1. Enemy
-2. Missile
-3. ...
+1. Cloud
+2. ...
 
 ### Pour chaque classe (POSTIT), identifier et noter les attributs
 1. GameEngine
-   2. ennemis
-   3. missiles
-   4. ...
+   2. cloud
+   3. ...
 
-2. Enemy
-   2. symbol (visuel de l’ennemi)
-   3. positionX
-   4. positionY
-   5. speed
-   6. missile
+2. Cloud
+   2. skin
    7. ...
 
-5. Missile
-   6. symbole (visuel du missile)
-   7. positionX
-   8. positionY
+5. Drop
    9. speed
    10. ...
 
@@ -51,13 +42,12 @@ Ceci va impacter le choix des attributs et méthodes qui vont suivre...
    2. Start()
    3. Quit()
    
-2. Enemy
-   1. MoveToNextPosition()
-   2. FireMissile()
-   3. ...
+2. Cloud
+   1. MoveByTheWind()
+   2. ...
    
-3. Missile
-   1. MoveToNextPosition()
+3. Drop
+   1. Fall()
    2. ...
 
 ## Réalisation
@@ -70,12 +60,15 @@ faire
 {
     Effacer l’écran
     
-    Pour tous les ennemis:
-        Afficher l’ennemi
-        SI ennemi.MoveToNextPosition() est FAUX :
-            retirer l’ennemi de la liste
+    Pour tous les nuages:
+        Afficher le nuage
+        SI nuage.MoveByTheWind() est FAUX :
+            retirer le nuage de la liste
+        SINON SI "nuage doit encore pleuvoir" :
+            créer N nouvelles gouttes
+            ...
             
-    Pour tous les missiles:
+    Pour toutes les gouttes:
         ...
     
     Attendre 100ms
@@ -83,10 +76,10 @@ faire
 }tant qu’on appuie pas sur la touche ESC
 ```
 
-### Enemy
-Pour pouvoir afficher un ennemi avec le code suivant :
+### Cloud
+Pour pouvoir afficher un nuage avec le code suivant :
 ```csharp
-Console.Write(ennemi)
+Console.Write(cloud)
 ```
 
 Grâce à la POO, on peut **remplacer** la méthode *ToString()* de la classe *Object*
@@ -94,23 +87,23 @@ de cette manière
 ```csharp
 public override string ToString()
 {
-    return Convert.ToString(symbol);
+    return Convert.ToString(skin);
 }
 ```
 
-Ainsi, on peut passer les instances de type *Enemy* à la méthode *Write*...
+Ainsi, on peut passer les instances de type *Cloud* à la méthode *Write*...
 
-### Missile
-Quand on a réussi la classe *Enemy*, la classe *Missile* ne devrait avoir
+### Drop
+Quand on a réussi la classe *Cloud*, la classe *Drop* ne devrait avoir
 aucun secret...
 
 ## Refactoring (avancé)
 Sans avoir vu la théorie de l’héritage, comment pourrait-on mutualiser
-le code commun du missile et de l’ennemi (position, symbol) dans une classe
+le code commun de la goutte et du nuage (position, skin) dans une classe
 qu’on pourrait, par exemple, appeler *Sprite*
 
 ### Identifier les éléments communs
 
 ### Créer la classe avec ces éléments
 
-### Enlever le code similaire dans Missile et Enemy et ajouter ":Sprite" à la signature de classe...
+### Enlever le code similaire dans Cloud et Drop et ajouter ":Sprite" à la signature de classe...
