@@ -17,14 +17,15 @@ Cours POO
 - Collections
 - Exercice création de classe / instantiation 
 
-### Séquence 3
+### [Séquence 3](sequences/03.md)
+
+- Consolidation
+
+### Séquence 4
 
 - Héritage / Polymorphisme
 - UML
 - Exercice général + Exo fourmi
-
-### Séquence 4
-
 - Test
 - Activité M&M : tests à faire pour publier le produit au public (Zweifel)
 - Démo MSTest
