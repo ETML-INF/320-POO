@@ -26,21 +26,21 @@ Ceci va impacter le choix des attributs et méthodes qui vont suivre...
 
 ### Pour chaque classe (POSTIT), identifier et noter les attributs
 1. GameEngine
-   2. cloud
-   3. ...
+   1. cloud
+   2. ...
 
 2. Cloud
-   2. skin
-   7. ...
+   1. skin
+   2. ...
 
-5. Drop
-   9. speed
-   10. ...
+3. Drop
+   1. speed
+   2. ...
 
 ### Pour chaque classe (POSTIT), identifier et noter les méthodes
 1. GameEngine
-   2. Start()
-   3. Quit()
+   1. Start()
+   2. Quit()
    
 2. Cloud
    1. MoveByTheWind()
