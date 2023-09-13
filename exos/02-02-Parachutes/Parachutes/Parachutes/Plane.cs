@@ -26,7 +26,7 @@ namespace Parachutes
         // Model attributes
         public int x;
         public int altitude;
-        private List<Para> parachutists;
+        public List<Para> parachutists;
 
         /// <summary>
         /// Constructor
@@ -53,7 +53,6 @@ namespace Parachutes
         /// <summary>
         /// Move the plane
         /// </summary>
-        /// <param name="window_width"></param>
         public void update()
         {
             if (x >= Config.SCREEN_WIDTH)
@@ -75,14 +74,13 @@ namespace Parachutes
             this.parachutists.Add(para);
         }
 
-        internal void dropParachutist()
+        internal Para dropParachutist()
         {
-            if (parachutists.Count == 0) { return; }
             Para parachutist = parachutists.First();
-            parachutists.RemoveAt(0);
+            parachutists.Remove(parachutist);
             parachutist.x = x;
             parachutist.altitude = this.altitude;
-            parachutist.isInAPlane = false;
+            return parachutist;
         }
     }
 }

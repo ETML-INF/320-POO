@@ -36,7 +36,6 @@ namespace Parachutes
         public int x;
         public int altitude;
         public bool parachuteIsOpen;
-        public bool isInAPlane;
 
         /// <summary>
         /// Constructor
@@ -52,41 +51,39 @@ namespace Parachutes
         /// </summary>
         internal void update()
         {
-            if (!isInAPlane) // Il a sauté
+            if (altitude > PARA_HEIGHT) // il est en l'air
             {
-                if (altitude > PARA_HEIGHT) // il est en l'air
+                if (parachuteIsOpen)
                 {
-                    if (parachuteIsOpen)
-                    {
-                        altitude -= 1; // il tombe lentement
-                    }
-                    else
-                    {
-                        altitude -= 3; // il tombe vite
-                    }
-                    // Décision d'ouvrir le parachute
-                    if (altitude < Config.SCREEN_HEIGHT / 2)
-                    {
-                        parachuteIsOpen = true;
-                    }
-                } else // il est au sol
-                {
-                    parachuteIsOpen = false;
+                    altitude -= 1; // il tombe lentement
                 }
+                else
+                {
+                    altitude -= 3; // il tombe vite
+                }
+                // Décision d'ouvrir le parachute
+                if (altitude < Config.SCREEN_HEIGHT / 2)
+                {
+                    parachuteIsOpen = true;
+                }
+            }
+            else // il est au sol
+            {
+                parachuteIsOpen = false;
             }
         }
 
-        internal void draw()
+        public void draw()
         {
-            if (!this.isInAPlane)
+            string[] view = parachuteIsOpen ? viewWithParachute : viewNoParachute;
+            for (int i = 0; i < view.Length; i++)
             {
-                string[] view = parachuteIsOpen ? viewWithParachute : viewNoParachute ;
-                for (int i = 0; i < view.Length; i++)
-                {
-                    Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this.altitude + i);
-                    Console.Write(view[i]);
-                }
+                Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this.altitude + i);
+                Console.Write(view[i]);
             }
+            Console.SetCursorPosition(x, Config.SCREEN_HEIGHT - this.altitude -1);
+            Console.Write(this.name);
         }
+
     }
 }

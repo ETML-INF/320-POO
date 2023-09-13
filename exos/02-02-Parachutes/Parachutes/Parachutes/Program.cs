@@ -10,17 +10,13 @@ Console.WindowWidth = Config.SCREEN_WIDTH;
 ConsoleKeyInfo keyPressed;
 
 // Créer le groupe de parachutistes
-List<Para> paraClub = new List<Para>();
-paraClub.Add(new Para("Bob"));
-paraClub.Add(new Para("Alice"));
-paraClub.Add(new Para("Max"));
+List<Para> parachutistsInTheAir = new List<Para>();
 
 // Créer l'avion et embarquer le club
 Plane plane = new Plane();
-foreach (Para para in paraClub)
+for (int i = 0; i < 8; i++)
 {
-    para.isInAPlane = true;
-    plane.board(para);
+    plane.board(new Para("Bob "+i.ToString()));
 }
 
 while (true)
@@ -35,19 +31,22 @@ while (true)
                 Environment.Exit(0);
                 break;
             case ConsoleKey.Spacebar:
-                plane.dropParachutist();
+                Para jumper = plane.dropParachutist();
+                parachutistsInTheAir.Add(jumper);
+                break;
+            default:
                 break;
         }
     }
 
     plane.update();
-    foreach (Para para in paraClub)
+    foreach (Para para in parachutistsInTheAir)
     {
         para.update();
     }
 
     plane.draw();
-    foreach (Para para in paraClub)
+    foreach (Para para in parachutistsInTheAir)
     {
         para.draw();
     }
