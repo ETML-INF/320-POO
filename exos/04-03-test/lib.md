@@ -1,31 +1,40 @@
-Créer une libraire pour faciliter l’utilisation d’éléments aléatoire afin d’éviter des bogues liés au générateur C#.
-La librairie doit fournir au moins les services suivants :
+# Créer une libraire pour faciliter l’utilisation d’éléments aléatoire afin d’éviter des bogues liés au générateur C#.
 
-Élements de base:
+## La librairie doit fournir au moins les services suivants :
 
-char Next();
-string Next();
-Date Next();
-int Next();
+### Élements de base:
 
-Versions personnalisées
-char Next(string dictionary);
-string Next(int length);
-Date Next(Date min, Date max);
-int Next(int min, int max);
-int Next(int[] dictionary);
+- char Next(); //Générer un caractère aléatoire
+- string Next(); //Générer une chaîne aléatoire
+- Date Next(); //Générer une date aléatoire
+- int Next(); //Générer un entier aléatoire
 
-SetSeed(int seed);//pour rejouer une série...
+### Versions personnalisées
+- char Next(string dictionary); //Pour la classe CharGenerator:Generator\<char\>
+- string Next(int length); //Pour la classe StringGenerator:Generator\<string\>
+- Date Next(Date min, Date max);
+- int Next(int min, int max);
+- int Next(int[] dictionary);
+- SetSeed(int seed);//pour rejouer une série...
 
-Pour faciliter le travail en équipe, la hiérarchie suivante est demandée :
+*Pour faciliter le travail en équipe (théorique), la hiérarchie suivante est demandée :*
 
-class Generator<T>{}
-class StringGenerator:Generator<string> => contiendra la méthode Next(string dictionary)...
-class IntGenerator:Generator<int>
+class Generator\<T\>{}
+
+class StringGenerator : Generator\<string\> // contiendra la méthode Next(string dictionary)...
+
+class IntGenerator:Generator\<int\>
+
 class ...
 
+## Tests
+Ajouter un projet test unitaire pour valider chacun de ces éléments
 
-AJOUTER un projet test unitaire pour valider chacun de ces éléments
+## Bonus
 
-PUBLIER la libraire dans un repo NUGET LOCAL
+### Ajouter des méthodes en s’inspirant de librairie type "faker" pour le testing
+Par exemple [fakerphp](https://fakerphp.github.io/)...
+
+### Nuget
+Publier la libraire dans un repo NUGET LOCAL
 
