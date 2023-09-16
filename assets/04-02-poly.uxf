@@ -1,0 +1,17 @@
+<diagram program="umletino" version="15.1"><zoom_level>14</zoom_level><element><id>UMLClass</id><coordinates><x>168</x><y>56</y><w>308</w><h>140</h></coordinates><panel_attributes>Water
+--
+# temperature: float
+--
++ Heat(int degrees)
++ IsMelt(): bool
++ IsSolid(): bool</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>56</x><y>294</y><w>196</w><h>112</h></coordinates><panel_attributes>Ice
+--
+- age: int
+--
++ Heat(int degrees)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>168</x><y>182</y><w>168</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-
+inherits</panel_attributes><additional_attributes>100;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>364</x><y>294</y><w>196</w><h>112</h></coordinates><panel_attributes>Vapor
+--
+- isPartOfACloud: bool
+--
++ Heat(int degrees)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>308</x><y>182</y><w>210</w><h>140</h></coordinates><panel_attributes>lt=&lt;&lt;-
+inherits</panel_attributes><additional_attributes>10;10;130;80</additional_attributes></element></diagram>
