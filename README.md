@@ -22,7 +22,7 @@ Cours POO
 
 - Consolidation
 
-### Séquence 4
+### [Séquence 4](sequences/04.md)
 
 - Héritage / Polymorphisme
 - UML
