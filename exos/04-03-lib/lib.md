@@ -71,7 +71,7 @@ Pour publier la doc sur github pages, se référer à la [doc suivante](https://
 
 ### Créer une version simpliste *BadDestiny*
 
-1. Créer un nouvelle classe noméée BadDestiny
+1. Créer un nouvelle classe nomée BadDestiny
 2. Ajouter ": ISmartChance" à la déclaration de la classe
 3. Demander à VS d’implémenter automatiquement:
 ![Alt text](smart-impl.png)
