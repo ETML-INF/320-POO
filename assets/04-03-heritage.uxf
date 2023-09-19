@@ -1,0 +1,24 @@
+<diagram program="umletino" version="15.1"><zoom_level>14</zoom_level><element><id>UMLClass</id><coordinates><x>140</x><y>56</y><w>196</w><h>182</h></coordinates><panel_attributes>Creature
+--
+# name: string
+--
++ Breath()
++ Eat()
++ Drink()
++ Sleep()
++ Evacuate()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>56</x><y>322</y><w>196</w><h>98</h></coordinates><panel_attributes>Insect
+--
+- hasWing : bool
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>224</y><w>140</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;-
+inherits</panel_attributes><additional_attributes>70;10;10;70</additional_attributes></element><element><id>UMLClass</id><coordinates><x>56</x><y>490</y><w>196</w><h>112</h></coordinates><panel_attributes>Ant
+--
+
+--
++ DropPheromon()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>406</y><w>98</w><h>112</h></coordinates><panel_attributes>lt=&lt;&lt;-
+inherits</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>294</x><y>322</y><w>196</w><h>98</h></coordinates><panel_attributes>Fish
+--
+- isSalty: bool
+--
++ Swim()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>224</y><w>196</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;-
+inherits</panel_attributes><additional_attributes>10;10;120;70</additional_attributes></element></diagram>

@@ -16,36 +16,39 @@ Cours POO
 - Classe / Objet / Namespace / Terminologie
 - Collections
 - Exercice création de classe / instantiation 
+- Properties : attribut privé sans _ , accesseur / modificateur explicites
 
-### Séquence 3
+### [Séquence 3](sequences/03.md)
+
+- Consolidation
+
+### [Séquence 4](sequences/04.md)
 
 - Héritage / Polymorphisme
 - UML
-- Exercice général + Exo fourmi
-
-### Séquence 4
-
-- Test
-- Activité M&M : tests à faire pour publier le produit au public (Zweifel)
-- Démo MSTest
-- Ajouter des tests à un exo précédent
+- Lib aléatoire
+- Documentation auto
 
 ### Séquence 5
 
 - **Test 1 (théorique)**
-- Encapsulation / Visibilité
-- Properties : attribut privé sans _ , accesseur / modificateur explicites
-- Ajouter des contraintes / conversions à des attributs d'un exercice précédent
+
+- Activité M&M : tests à faire pour publier le produit au public (Zweifel)
+- Démo MSTest + calculatrice
+- Ajouter des tests à la lib aléatoire
 
 ### Séquence 6
 
-- Librairie pour partage de code entre fourmi par composition
-- 
+- Comment tester la console
+- Héritage 2 (fourmi)
+
 ### Séquence 7
 
 - **Test 2 (pratique, tests unitaires à corriger)**
 - Lib
 
 ### Séquence 8
-
 - Remediations
+- Build et déploiement NUGET d’une librairie depuis Github
+- Builder pattern
+- Immutabilité

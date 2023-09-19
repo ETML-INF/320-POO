@@ -1,0 +1,25 @@
+<diagram program="umletino" version="15.1"><zoom_level>14</zoom_level><element><id>UMLClass</id><coordinates><x>210</x><y>56</y><w>196</w><h>140</h></coordinates><panel_attributes>IStrategy
+--
+--
++ GetMessage()
++ GetId()
++ GetColor()
++ GetTarget()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>56</x><y>322</y><w>252</w><h>126</h></coordinates><panel_attributes>/QueenStrategy/
+--
+# queen: Queen
+--
++ GetMessage() : string
++ GetNextDirection: Direction
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>182</y><w>196</w><h>168</h></coordinates><panel_attributes>lt=&lt;&lt;.
+lt
+implements</panel_attributes><additional_attributes>120;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>378</x><y>322</y><w>196</w><h>112</h></coordinates><panel_attributes>/AntStrategy/
+--
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>294</x><y>182</y><w>210</w><h>168</h></coordinates><panel_attributes>lt=&lt;&lt;.
+implements</panel_attributes><additional_attributes>10;10;130;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>56</x><y>532</y><w>252</w><h>112</h></coordinates><panel_attributes>BlueQueenExampleStrategy
+--
+--
++ GetMessage() : string
++ GetNextDirection: Direction
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>168</x><y>434</y><w>210</w><h>126</h></coordinates><panel_attributes>lt=&lt;&lt;-
+inherits / implements</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element></diagram>
