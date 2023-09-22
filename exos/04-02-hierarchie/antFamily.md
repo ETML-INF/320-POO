@@ -14,7 +14,7 @@ Préparer la hiérarchie de classe pour un simulateur de fourmis.
 ## Version 1 du jeu
 En mode console, on affiche juste les actions qui sont entreprises (par exemple: *La reine bleue a pondu 1 oeuf de type Farmer* ou *une fourmi est morte*, ...) et les statistiques du monde (rien de graphique, même sur la console).
 
-Voir [déroulement](#déroulement) pour les détails.
+Voir [déroulement](#déroulement-v1) pour les détails.
 
 # Aide pour commencer
 ## Combien de classes et lesquelles ?
