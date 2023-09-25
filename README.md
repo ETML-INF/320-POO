@@ -39,7 +39,8 @@ Cours POO
 
 ### Séquence 6
 
-- Comment tester la console
+- Retour du test
+- Récap sur les tests : Comment tester la console
 - Héritage 2 (fourmi)
 
 ### Séquence 7
