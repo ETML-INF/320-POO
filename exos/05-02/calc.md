@@ -10,12 +10,12 @@ internal class Calculator
 
     public int Add(int a, int b)
     {
-        return a + b;
+        return a;
     }
 
     public int Multiply(int a,int b)
     {
-        return a * b;
+        return b;
     }
 }
 ```
@@ -59,10 +59,14 @@ Ce qui devrait arriver au résultat suivant:
 ![Alt text](calc-create-tests-done.png)
 
 ## Suite
-Désormais, il ne reste plus qu’à écrire du code pour valider les fonctionnalités en suivant toujours le pattern 
-- Arrange
-- Act
-- Assert
+Désormais, il ne reste plus qu’à 
+
+1. Écrire du code pour valider les fonctionnalités en suivant toujours le pattern 
+   - Arrange
+   - Act
+   - Assert
+
+2. Corriger le code pour que les tests passent
 
 ### Tâches à réaliser
 
@@ -74,4 +78,14 @@ Désormais, il ne reste plus qu’à écrire du code pour valider les fonctionna
    
    stocke les opérations effectuées sous forme textuelle, par exemple pour l’appel *calculator.Add(1,2)*, cela ajoute une chaîne de caractère sous la forme "1+2=3" et ainsi de suite...
    En appelant *calculator.History()*, cela affiche chaque calcul séparé par un retour de ligne (\\n)
+
 1. Compléter les tests automatisés pour les méthodes ajoutées
+
+1. Corriger la classe Calculator selon le résultat des tests
+
+
+# TDD
+TDD veut dire "test driven development", l’idée derrière cet acronyme est de commencer par écrire les tests avec du code "vide" que l’on remplira après...
+Cela peut paraître étrange mais ça force à réflféchir au résultat attendu du code et c’est un grand soutien à la réflexion lorsqu’on programme...
+
+Voir [ici](https://www.browserstack.com/guide/what-is-test-driven-development) pour plus de détails sur cette pratique.
