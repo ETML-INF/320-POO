@@ -29,7 +29,7 @@ Cours POO
 - Lib aléatoire
 - Documentation auto
 
-### Séquence 5
+### [Séquence 5](sequences/05.md)
 
 - **Test 1 (théorique)**
 
