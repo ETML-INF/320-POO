@@ -37,11 +37,10 @@ Cours POO
 - Démo MSTest + calculatrice
 - Ajouter des tests à la lib aléatoire
 
-### Séquence 6
+### [Séquence 6](sequences/06.md)
 
 - Retour du test
-- Récap sur les tests : Comment tester la console
-- Héritage 2 (fourmi)
+- Test / Héritage / IOC
 
 ### Séquence 7
 
