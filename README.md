@@ -42,13 +42,12 @@ Cours POO
 - Retour du test
 - Test / Héritage / IOC
 
-### Séquence 7
+### [Séquence 7](sequences/07.md)
 
 - **Test 2 (pratique, tests unitaires à corriger)**
-- Lib
+- Lib / Projet
 
-### Séquence 8
+### [Séquence 8](sequences/08.md)
 - Remediations
-- Build et déploiement NUGET d’une librairie depuis Github
-- Builder pattern
-- Immutabilité
+- Découvertes
+
