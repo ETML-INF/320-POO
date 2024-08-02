@@ -1,20 +1,21 @@
-using Drones.Model;
-
 namespace Drones
 {
+    // La classe AirSpace représente le territoire au dessus duquel les drones peuvent voler
+    // Il s'agit d'un formulaire (une fenêtre) qui montre une vue 2D depuis en dessus
+    // Il n'y a donc pas de notion d'altitude qui intervient
+
     public partial class AirSpace : Form
     {
-        public static readonly int WIDTH = 1200;
+        public static readonly int WIDTH = 1200;        // Dimensions of the airspace
         public static readonly int HEIGHT = 600;
-        public static readonly int CONTACT_DISTANCE = 5;
-        public static readonly int MAX_SPEED = 5;
 
-
+        // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
         private List<Drone> fleet;
 
         BufferedGraphicsContext currentContext;
         BufferedGraphics airspace;
 
+        // Initialisation de l'espace aérien avec un certain nombre de drones
         public AirSpace(List<Drone> fleet)
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace Drones
             this.fleet = fleet;
         }
 
+        // Affichage de la situation actuelle
         private void Render()
         {
             airspace.Graphics.Clear(Color.AliceBlue);
@@ -39,17 +41,19 @@ namespace Drones
             airspace.Render();
         }
 
-        private new void Update()
+        // Calcul du nouvel état après que 'interval' millisecondes se sont écoulées
+        private void Update(int interval)
         {
             foreach (Drone drone in fleet)
             {
-                drone.Update();
+                drone.Update(interval);
             }
         }
 
-        private void ticker_Tick(object sender, EventArgs e)
+        // Méthode appelée à chaque frame
+        private void NewFrame(object sender, EventArgs e)
         {
-            this.Update();
+            this.Update(ticker.Interval);
             this.Render();
         }
     }

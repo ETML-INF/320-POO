@@ -35,7 +35,7 @@
             // ticker
             // 
             this.ticker.Enabled = true;
-            this.ticker.Tick += new System.EventHandler(this.ticker_Tick);
+            this.ticker.Tick += new System.EventHandler(this.NewFrame);
             // 
             // AirSpace
             // 

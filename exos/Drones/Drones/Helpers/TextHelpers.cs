@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Drones.Helpers
+﻿namespace Drones.Helpers
 {
+    // Outils pour écrire du texte dans un environnement graphique
     internal static class TextHelpers
     {
         public static Font drawFont = new Font("Arial", 10);

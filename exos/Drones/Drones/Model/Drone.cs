@@ -1,41 +1,33 @@
-﻿using Drones.Helpers;
-
-namespace Drones.Model
+﻿namespace Drones
 {
-    public class Drone
+    // Cette partie de la classe Drone définit ce qu'est un drone par un modèle numérique
+    public partial class Drone
     {
-        public static readonly int FULLCHARGE = 1000;
-        private string _name;
-        private int _x;
-        private int _y;
-        private int _charge;
-        private Pen droneBrush = new Pen(new SolidBrush(Color.Purple), 3);
+        public static readonly int FULLCHARGE = 1000;   // Charge maximale de la batterie
+        private int _charge;                            // La charge actuelle de la batterie
+        private string _name;                           // Un nom
+        private int _x;                                 // Position en X depuis la gauche de l'espace aérien
+        private int _y;                                 // Position en Y depuis le haut de l'espace aérien
 
+        // Constructeur
         public Drone(int x, int y, string name)
         {
             _x = x;
             _y = y;
             _name = name;
-            _charge = GlobalHelpers.alea.Next(FULLCHARGE);
+            _charge = GlobalHelpers.alea.Next(FULLCHARGE); // La charge initiale de la batterie est choisie aléatoirement
         }
         public int X { get { return _x;} }
         public int Y { get { return _y;} }
         public string Name { get { return _name;} }
 
-        public void Update()
+        // Cette méthode calcule le nouvel état dans lequel le drone se trouve après
+        // que 'interval' millisecondes se sont écoulées
+        public void Update(int interval)
         {
-            _x += GlobalHelpers.alea.Next(-1, 2);
-            _y += GlobalHelpers.alea.Next(-1, 2);
-            _charge--;
-        }
-
-        public void Render(BufferedGraphics drawingSpace) {
-            drawingSpace.Graphics.DrawEllipse(droneBrush, new Rectangle(X - 4, Y - 2, 8, 8));
-            drawingSpace.Graphics.DrawString($"{this}", TextHelpers.drawFont, TextHelpers.writingBrush, X + 5, Y - 5);
-        }
-        public override string ToString()
-        {
-            return $"{Name} ({((int)((double)_charge/FULLCHARGE*100)).ToString()}%)";
+            _x += 2;                                    // Il s'est déplacé de 2 pixels vers la droite
+            _y += GlobalHelpers.alea.Next(-2, 3);       // Il s'est déplacé d'une valeur aléatoire vers le haut ou le bas
+            _charge--;                                  // Il a dépensé de l'énergie
         }
 
     }
