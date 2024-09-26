@@ -33,9 +33,47 @@ public interface IExpellable
 
 1. Créer l'interface `IExpellable` dans votre projet Drone 
 2. Déclarer le fait que la classe Drone implémente cette interface
-3. Ecrire les méthodes minimales (vides) pour que le code compile
+3. Générer les méthodes de l'interface avec Visual Studio (Actions rapides > Implémenter l'interface), vérifier que le code compile
 4. Faire un commit
-5. Ecrire le code qui rend l'interfcae vraiment réalisée:
-  - Un drone qui reçoit un ordre d'évacuation enregistre la zone
-  - `drone.GetEvacuationState()` retourne:
-    - `Free` 
+5. Ajouter le test ci-dessous dans votre classe de test. Exécuter les tests: ce test doit s'exécuter mais échouer (normal, on n'a encore rien codé)
+6. Modifiez votre classe `Drone` (partie modèle) jusqu'à ce que le test réussisse
+7. Faire un commit
+
+```csharp
+[TestMethod]
+public void Test_that_drone_is_taking_orders()
+{
+    // Arrange
+    Drone drone = new Drone(500, 500);
+
+    // Act
+    EvacuationState state = drone.GetEvacuationState();
+
+    // Assert
+    Assert.AreEqual(EvacuationState.Free, state);
+
+    // Arrange a no-fly zone around the drone
+    bool response = drone.Evacuate(new System.Drawing.Rectangle(400,400,200,200));
+
+    // Assert
+    Assert.IsFalse(response); // because the zone is around the drone
+    Assert.AreEqual(EvacuationState.Evacuating, drone.GetEvacuationState());
+
+    // Arrange: remove no-fly zone
+    drone.FreeFlight();
+
+    // Assert
+    Assert.AreEqual(EvacuationState.Free, drone.GetEvacuationState());
+}
+
+```
+
+**Bon à savoir:** .NET permet de savoir facilement si deux rectangles se touchent:
+![](rectangles.png)
+```csharp
+Rectangle r1 = new Rectangle(10,10,100,150);
+Rectangle r2 = new Rectangle(30,100,150,100);
+Rectangle r3 = new Rectangle(200,300,50,50);
+
+r1.IntersectsWith(r2); // true
+r1.IntersectsWith(r3); // false
