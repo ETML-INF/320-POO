@@ -68,7 +68,8 @@ public void Test_that_drone_is_taking_orders()
 
 ```
 
-**Bon à savoir:** .NET permet de savoir facilement si deux rectangles se touchent:
+**Bon à savoir:** .NET permet de savoir facilement si deux rectangles se touchent:  
+
 ![](rectangles.png)
 ```csharp
 Rectangle r1 = new Rectangle(10,10,100,150);
