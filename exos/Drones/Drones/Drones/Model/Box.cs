@@ -34,5 +34,10 @@ namespace Drones
             _weight = weight;
             _color = color;
         }
+
+        public override string ToString()
+        {
+            return $"Boîte {_id}, {_weight}kg de smarties {_color}";
+        }
     }
 }

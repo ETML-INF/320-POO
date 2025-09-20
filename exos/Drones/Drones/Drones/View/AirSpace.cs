@@ -56,6 +56,15 @@ namespace Drones
             {
                 drone.Update(interval);
             }
+            
+            // Activate factories
+            foreach (Building building in _buildings)
+            {
+                if (building.GetType() == typeof(Factory))
+                {
+                    ((Factory)building).Update(interval);
+                }
+            }
         }
 
         // Méthode appelée à chaque frame
