@@ -10,8 +10,8 @@ namespace Drones
 {
     public partial class Building
     {
-        private Pen _pen;
-        public void Render(BufferedGraphics drawingSpace)
+        protected Pen _pen;
+        public virtual void Render(BufferedGraphics drawingSpace)
         {
             drawingSpace.Graphics.DrawRectangle(_pen,_x,_y,_width,_height);
         }

@@ -17,9 +17,9 @@ namespace Drones
             fleet.Add(new Drone(AirSpace.WIDTH / 2, AirSpace.HEIGHT / 2, "Joe"));
 
             List<Building> buildings= new List<Building>();
-            buildings.Add(new Building(20, 20, 50, 25, Color.Black));
-            buildings.Add(new Building(120, 20, 50, 25, Color.Black));
-            buildings.Add(new Building(20, 220, 50, 25, Color.Black));
+            buildings.Add(new Factory(20, 20, 2500.0));
+            buildings.Add(new Factory(120, 20,  4000));
+            buildings.Add(new Store(20, 220, new List<string>() { "Lu : 8h-18h", "Ma : 8h-18h", "Me : 8h-18h", "Je : 8h-18h", "Ve : 8h-18h", "Sa-Di : Fermé" }));
 
             // Démarrage
             Application.Run(new AirSpace(fleet, buildings));
