@@ -24,18 +24,45 @@ Faites un commit à chaque pas.
    - Si ce compteur représente plus que 5 secondes
      - Fabriquez un carton de smarties
      - Annoncez-le dans la console, genre : "L'usine 3 a produit un carton de 5kg de smarties rouges"
-4. Créez la classe `Dispatch` qui modélise la centrale de distribution, déclarez-la et instanciez-la en `static` dans la classe `Airspace`.
-5. Créez l'interface `IDispatchable` (mettre le fichier dans `Model`). Cette interface doit permettre:
-   - De passer un objet `Box` pour qu'il soit enregistré dans la liste
-   - De retirer un objet `Box` de la liste  
-  
-   A vous de choisir les signatures de ces deux méthodes
-6. Déclarez l'implémentation de l'interface `IDispatchable` par la classe `Dispatch`. Faites faire l'implémentation de base de l'interface à Visual Studio (Actions rapides...)
-7. Implémentez réellement les méthodes. 
-8. Modifiez votre factory pour qu'elle transmette les cartons produits à à la centrale.
-9. La centrale affiche l'annonce d'un carton dans la console. A partir de là, chaque fois qu'un carton est produit, on a deux messages dans la console:
+     - Enregistrez-le dans le stock de l'usine (déclarée ainsi: `private List<Box> _stock;`)
+4. Dans votre dossier `Model`, ajoutez l'interface `IDispatchable`, mettez-y le code suivant:
+      ```csharp
+      namespace Drones
+      {
+          public interface IDispatchable
+          {
+              // Dépose d'une boîte de smarties 
+              public void DropBox(Box box);
+      
+              // Prise d'une boîte de smarties
+              // Retourne `null` s'il n'y a pas de boîte en stock
+              public Box? Pickup();
+      
+          }
+      }
+      ```
+    
+5. Créez la classe `Dispatch`, qui modélise la centrale de distribution (un endroit qui centralise la liste de toutes les boîtes produites et qui décide à quel magasin chaque boîte doit aller).
+   Déclarez-la comme ceci:
+   ```csharp
+   namespace Drones
+   {
+       public class Dispatch : IDispatchable
+       {
+           ...
+   ```
+   Cela indique que la classe `Dispatch` implémente l'interface `IDispatchable`
+
+6. Faites faire l'implémentation de base de l'interface à Visual Studio (Actions rapides...)
+7. Implémentez réellement les méthodes.
+8. Ajoutez une centrale de distribution (`Dispatcher`) dans votre `AirSpace`:
+   ```csharp
+   public static Dispatch Dispatcher = new Dispatch();
+   ```
+10. Modifiez votre factory pour qu'elle annonce les cartons produits à la centrale.
+11. La centrale affiche l'annonce d'un carton dans la console. A partir de là, chaque fois qu'un carton est produit, on a deux messages dans la console:
     - Message de fabrication (par la `Factory`)
     - Message de réception (par la centrale)
-10. Ecrivez un test unitaire qui valide chacune des méthodes implémentée par `Dispatch`
+12. Ecrivez un test unitaire qui valide les deux méthodes implémentée par `Dispatch`
 
 N'hésitez pas à valider le contenu de vos commits avec votre prof ou un de ses assistants.
