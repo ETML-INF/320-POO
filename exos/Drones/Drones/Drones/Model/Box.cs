@@ -37,7 +37,7 @@ namespace Drones
 
         public override string ToString()
         {
-            return $"Boîte {_id}, {_weight}kg de smarties {_color}";
+            return $"Boîte {_id}, {_weight}kg de smarties {_color}s";
         }
     }
 }

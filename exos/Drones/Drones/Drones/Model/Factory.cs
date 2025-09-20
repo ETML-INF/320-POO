@@ -31,6 +31,7 @@ namespace Drones
             {
                 Box box = new Box();
                 Console.WriteLine($"L'usine {_id} produit :{box}");
+                AirSpace.Dispatcher.DropBox( box );
                 _timeCounter = 0;
             }
         }

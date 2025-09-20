@@ -16,6 +16,8 @@ namespace Drones
         BufferedGraphicsContext currentContext;
         BufferedGraphics airspace;
 
+        public static Dispatch Dispatcher = new Dispatch();
+
         // Initialisation de l'espace aérien avec un certain nombre de drones
         public AirSpace(List<Drone> fleet, List<Building> buildings)
         {
