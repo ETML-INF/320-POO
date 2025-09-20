@@ -20,11 +20,10 @@ Faites un commit à chaque pas.
 1. Créez une classe `Box` qui modélise le carton de smarties.
 2. Ajoutez une propriété `Id` à votre `Factory`, cela permettra de l'identifier.
 3. Ajoutez une méthode `Update` au modèle `Factory`, veillez à ce que le moteur l'appelle pour toutes les usines à chaque cycle (frame), parce que maintenant il va se passer des choses dans votre usine quand le temps passe:
-   - Incrémentez un "compteur de frames"
+   - Incrémentez un "compteur de temps"
    - Si ce compteur représente plus que 5 secondes
      - Fabriquez un carton de smarties
-     - Annoncez-le à la centrale de distribution (`Dispatch`)
-     - La centrale annonce la réception du carton par un message dans la console (`Console.WriteLine`)
+     - Annoncez-le dans la console, genre : "L'usine 3 a produit un carton de 5kg de smarties rouges"
 4. Créez la classe `Dispatch` qui modélise la centrale de distribution, déclarez-la et instanciez-la en `static` dans la classe `Airspace`.
 5. Créez l'interface `IDispatchable` (mettre le fichier dans `Model`). Cette interface doit permettre:
    - De passer un objet `Box` pour qu'il soit enregistré dans la liste
