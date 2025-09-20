@@ -16,8 +16,13 @@ namespace Drones
             List<Drone> fleet= new List<Drone>();
             fleet.Add(new Drone(AirSpace.WIDTH / 2, AirSpace.HEIGHT / 2, "Joe"));
 
+            List<Building> buildings= new List<Building>();
+            buildings.Add(new Building(20, 20, 50, 25, Color.Black));
+            buildings.Add(new Building(120, 20, 50, 25, Color.Black));
+            buildings.Add(new Building(20, 220, 50, 25, Color.Black));
+
             // Démarrage
-            Application.Run(new AirSpace(fleet));
+            Application.Run(new AirSpace(fleet, buildings));
         }
     }
 }
