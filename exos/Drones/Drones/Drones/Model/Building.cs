@@ -8,19 +8,17 @@ namespace Drones
 {
     public partial class Building
     {
-        protected int _x;
-        protected int _y;
+        private Point location;
         protected int _width;
         protected int _height;
 
-        public int X { get => _x; set => _x = value; }
-        public int Y { get => _y; set => _y = value; }
+        public Point Location { get => location; set => location = value; }
         public int Width { get => _width; set => _width = value; }
         public int Height { get => _height; set => _height = value; }
+
         public Building(int x, int y, Color color)
         {
-            _x = x;
-            _y = y;
+            location = new Point(x, y);
             _width = Config.BUILDING_SIZE;
             _height = Config.BUILDING_SIZE;
             _pen = new Pen(color);

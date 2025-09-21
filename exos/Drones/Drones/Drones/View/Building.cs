@@ -13,7 +13,7 @@ namespace Drones
         protected Pen _pen;
         public virtual void Render(BufferedGraphics drawingSpace)
         {
-            drawingSpace.Graphics.DrawRectangle(_pen,_x,_y,_width,_height);
+            drawingSpace.Graphics.DrawRectangle(_pen,Location.X,Location.Y,_width,_height);
         }
     }
 }

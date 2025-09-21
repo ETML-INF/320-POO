@@ -11,7 +11,7 @@ namespace Drones
 
         // La flotte est l'ensemble des drones qui évoluent dans notre espace aérien
         private List<Drone> _fleet;
-        private List<Building> _buildings;
+        public static List<Building> Buildings;
 
         BufferedGraphicsContext currentContext;
         BufferedGraphics airspace;
@@ -19,7 +19,7 @@ namespace Drones
         public static Dispatch Dispatcher = new Dispatch();
         public static List<Store> Stores;
 
-        public static Point ChargingStation = new Point(30, AirSpace.HEIGHT/2);
+        public static Point ChargingStation = new Point(AirSpace.WIDTH / 2, AirSpace.HEIGHT / 2);
 
         // Initialisation de l'espace aérien avec un certain nombre de drones
         public AirSpace(List<Drone> fleet, List<Building> buildings)
@@ -31,7 +31,7 @@ namespace Drones
             // dimensions the same size as the drawing surface of the form.
             airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
             this._fleet = fleet;
-            this._buildings = buildings;
+            Buildings = buildings;
             Stores = buildings.Where(b => b.GetType() == typeof(Store)).Select(b => (Store)b).ToList();
         }
 
@@ -47,7 +47,7 @@ namespace Drones
             }
 
             // draw buildings
-            foreach (Building building in _buildings)
+            foreach (Building building in Buildings)
             {
                 building.Render(airspace);
             }
@@ -67,7 +67,7 @@ namespace Drones
             }
             
             // Activate factories
-            foreach (Building building in _buildings)
+            foreach (Building building in Buildings)
             {
                 if (building.GetType() == typeof(Factory))
                 {

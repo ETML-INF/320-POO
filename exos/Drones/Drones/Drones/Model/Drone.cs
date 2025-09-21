@@ -4,6 +4,7 @@
     public partial class Drone
     {
         public static readonly int FULLCHARGE = 2000;   // Charge maximale de la batterie
+        private const int CHARGE_INCREMENT = 20;        // Nombre de kWh chargés par cycle durant la recharge
         public static readonly int STANDARD_SPEED = 4;  // Vitesse normale
         private int _charge;                            // La charge actuelle de la batterie
         private string _name;                           // Un nom
@@ -16,10 +17,10 @@
         public Drone(int x, int y, string name)
         {
             _position = new Point(x, y);
+            _target = _position;
             _speed = new Point(GlobalHelpers.alea.Next(0, 8) - 4, GlobalHelpers.alea.Next(0, 8) - 4);
             _name = name;
             _charge = GlobalHelpers.alea.Next(FULLCHARGE); // La charge initiale de la batterie est choisie aléatoirement
-            _target = NewTarget();
         }
         public string Name { get { return _name; } }
 
@@ -30,7 +31,7 @@
         {
             if (GlobalHelpers.PointsAreClose(_position, AirSpace.ChargingStation) && _charge < FULLCHARGE)
             {
-                _charge += 10;
+                _charge += CHARGE_INCREMENT;
                 if (_charge >= FULLCHARGE)
                 {
                     _charge = FULLCHARGE;
@@ -60,7 +61,8 @@
 
         private Point NewTarget()
         {
-            return new Point(GlobalHelpers.alea.Next(0, AirSpace.WIDTH), GlobalHelpers.alea.Next(0, AirSpace.HEIGHT));
+            // Pick a building at random
+            return AirSpace.Buildings.ElementAt(GlobalHelpers.alea.Next(0, AirSpace.Buildings.Count())).Location;
         }
 
     }

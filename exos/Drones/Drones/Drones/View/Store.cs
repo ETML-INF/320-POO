@@ -11,7 +11,7 @@ namespace Drones
     {
         public override void Render(BufferedGraphics drawingSpace)
         {
-            drawingSpace.Graphics.DrawEllipse(_pen, _x, _y, _width, _height);
+            drawingSpace.Graphics.DrawEllipse(_pen, Location.X, Location.Y, _width, _height);
         }
     }
 }
