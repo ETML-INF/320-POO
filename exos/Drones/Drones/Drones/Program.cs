@@ -28,6 +28,7 @@ namespace Drones
             for (int f = 0; f < 4; f++)
             {
                 buildings.Add(new Store(
+                    $"Shop {f+1}",
                     AirSpace.WIDTH / 8 + f * AirSpace.WIDTH / 4 + GlobalHelpers.alea.Next(0, 100) - 50,
                     4*AirSpace.HEIGHT / 5 + GlobalHelpers.alea.Next(0, 100) - 50,
                     new List<string>() { "Lu : 8h-18h", "Ma : 8h-18h", "Me : 8h-18h", "Je : 8h-18h", "Ve : 8h-18h", "Sa-Di : Fermé" }));

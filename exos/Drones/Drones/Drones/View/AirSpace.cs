@@ -17,6 +17,7 @@ namespace Drones
         BufferedGraphics airspace;
 
         public static Dispatch Dispatcher = new Dispatch();
+        public static List<Store> Stores;
 
         // Initialisation de l'espace aérien avec un certain nombre de drones
         public AirSpace(List<Drone> fleet, List<Building> buildings)
@@ -29,6 +30,7 @@ namespace Drones
             airspace = currentContext.Allocate(this.CreateGraphics(), this.DisplayRectangle);
             this._fleet = fleet;
             this._buildings = buildings;
+            Stores = buildings.Where(b => b.GetType() == typeof(Store)).Select(b => (Store)b).ToList();
         }
 
         // Affichage de la situation actuelle

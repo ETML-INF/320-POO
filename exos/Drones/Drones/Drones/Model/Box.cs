@@ -13,6 +13,7 @@ namespace Drones
         private int _id;
         private int _weight;
         private string _color;
+        public Store? TargetStore { get; set; } = null;
 
         public Box()
         {

@@ -8,12 +8,14 @@ namespace Drones
 {
     public class Dispatch:IDispatchable
     {
-        static List<Box> _boxes = new List<Box>();
+        List<Box> _boxes = new List<Box>();
 
         public void DropBox(Box box)
         {
             _boxes.Add(box);
             Console.WriteLine($"Dispatch reçoit une boîte: {box}");
+            box.TargetStore = AirSpace.Stores.ElementAt(GlobalHelpers.alea.Next(AirSpace.Stores.Count));
+            Console.WriteLine($"Elle est attribuée à {box.TargetStore.Name}");
         }
 
         public Box? Pickup()
