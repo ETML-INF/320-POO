@@ -19,6 +19,8 @@ namespace Drones
         public static Dispatch Dispatcher = new Dispatch();
         public static List<Store> Stores;
 
+        public static Point ChargingStation = new Point(30, AirSpace.HEIGHT/2);
+
         // Initialisation de l'espace aérien avec un certain nombre de drones
         public AirSpace(List<Drone> fleet, List<Building> buildings)
         {
@@ -49,6 +51,9 @@ namespace Drones
             {
                 building.Render(airspace);
             }
+
+            // Draw charging station
+            airspace.Graphics.DrawEllipse(new Pen(Color.Orange,5), AirSpace.ChargingStation.X, AirSpace.ChargingStation.Y, 5, 5);
 
             airspace.Render();
         }
