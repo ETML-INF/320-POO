@@ -1,7 +1,7 @@
 # Drones
 ## Etape 1
 
-Reprendre l'asset [drones.zip](../../assets/drones.zip).
+Reprendre l'asset [drones.zip](../../assets/Drones.zip).
 
 1. Appliquer la technique de l'encapsulation pour qu'il n'y aie plus aucun attribut public dans la classe Drone
 2. Créer une classe statique de helper pour la génération de valeurs aléatoires
