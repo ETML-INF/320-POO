@@ -1,1 +1,0 @@
-# Exercice fil rouge : Drones
