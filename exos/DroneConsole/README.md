@@ -4,9 +4,9 @@ Le but de cet exercice est de découvrir les concepts de classe et d'objet au tr
 
 ## Etape 1
 
-Voici [un programme](../../assets/01-01-snail.zip) en mode console qui fait bouger un drone sur l'écran.
+Voici [un programme](drone.zip) en mode console qui fait bouger un drone sur l'écran.
 
-Le drone `_@_ö` part à gauche de l'écran avec 50 points de vie. Chaque déplacement vers la droite lui coûte un point de vie. A zéro points de vie, il est mort `____` et le programme s'arrête.
+Le drone `x-O-x` part à gauche de l'écran avec une batterie à 50%. Chaque déplacement vers la droite lui coûte un 2% de batterie. quand la batterie est vide, il est mort `____` et le programme s'arrête.
 
 Etablissons ensemble son pseudo-code.
 
