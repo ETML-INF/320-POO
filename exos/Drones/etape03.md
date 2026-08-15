@@ -3,6 +3,7 @@
 ## Etape 3
 
 > Dans laquelle on ajoute des bâtiments dans l'espace aérien et on apprend à notre drone les éviter au moyen de hitbox
+> Cela nous fera travailler avec des Rectangles et des Listes
 
 - Ajouter une nouvelle classe `Building` dans le dossier `Model`
 - Ajouter la liste statique `Buildings` dans l'espace aérien
