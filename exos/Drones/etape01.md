@@ -2,7 +2,7 @@
 
 ## Etape 1
 
-Reprendre l'asset [drones.zip](../../assets/Drones.zip).
+Reprendre l'asset [drones.zip](assets/Drones.zip). Dézippez-le dans le dossier personnel de votre repo. Exécuter le programme pour vérifier le bon fonctionnement.
 
 1. Appliquer la technique de l'encapsulation pour qu'il n'y aie plus aucun attribut public dans la classe Drone
 2. Créer une classe statique de helper pour la génération de valeurs aléatoires

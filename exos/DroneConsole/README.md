@@ -1,4 +1,4 @@
-# Le drone
+# Le Drone
 
 Le but de cet exercice est de découvrir les concepts de classe et d'objet au travers de la réalisation puis de la transformation d'un programme simple.
 
