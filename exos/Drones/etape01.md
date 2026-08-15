@@ -2,6 +2,8 @@
 
 ## Etape 1
 
+> Dans laquelle on met en pratique les concepts d'éléments statiques et d'encapsulation
+
 Reprendre l'asset [drones.zip](assets/Drones.zip). Dézippez-le dans le dossier personnel de votre repo. Exécuter le programme pour vérifier le bon fonctionnement.
 
 1. Appliquer la technique de l'encapsulation pour qu'il n'y aie plus aucun attribut public dans la classe Drone
