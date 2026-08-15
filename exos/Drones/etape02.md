@@ -2,7 +2,7 @@
 
 ## Etape 2
 
-> Dans laquelle on pratique l'ajout de code dans une classe
+> Dans laquelle le drone apprend à gérer son vol et nous on pratique l'ajout de code dans une classe
 
 - Le drone ne sort jamais de la zone de vol, même si l'objectif est hors limite
 - Lorsque le drone atteint son objectif, il en choisit un nouveau aléatoirement
