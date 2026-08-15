@@ -12,22 +12,22 @@ Le plan général de ce module:
 
 ## Semaine 2
 
-- Concepts de base OO
+- Classe statiques
 - Transformation de code procédural en OO
-- Listes
 
 ## Semaine 3
 
+- Listes
 - Principes d'un moteur de jeu
 - Encapsulation (visibilités, propriétés, getter/setter)
 
 ## Semaine 4
 
-- Tests unitaires
+- Exceptions
 
 ## Semaine 5
 
-- Exceptions
+- Tests unitaires
 
 ## Semaine 6
 
