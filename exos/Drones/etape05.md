@@ -37,3 +37,4 @@ public static readonly Pizza[] PIZZAS = new Pizza[]  // Pizzas prédéfinies pou
 
 - Au moment de sa création, chaque pizzeria choisit aléatoirement six de ces pizzas pour les mettre à son menu (attention à ne pas mettre deux fois la même pizza dans le menu). Il faut donc créer une liste d'objets de type `Pizza` dans la classe pizzeria. Cette liste doit naturellement être accessible en lecture seule.
 - Chaque pizzeria annonce son menu dans la console
+- Créer un test unitaire qui vérifie que si on crée 1000 pizzerias, elles auront toutes un menu contenant six pizzas différentes.
