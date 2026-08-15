@@ -11,7 +11,7 @@ Reprendre l'asset [drones.zip](assets/Drones.zip). Dézippez-le dans le dossier 
 3. Créer une classe statique Config. Y mettre les constantes:
    - Charge maximum de la batterie (MAX_LOAD)
    - Dimensions de l'espace aérien (AIRSPACE_WIDTH, AIRSPACE_HEIGHT)
-4. Utiliser ces constantes:
+4. Utiliser ces constantes dans:
    - Constructeur de Drone
    - Constructeur de AirSpace, après InitializeComponent()
 5. Ajouter des attributs privés au Drone pour qu'il puisse se fixer un objectif (des coordonnées vers lesquelles le drone se dirige). Il est initialisé dans le constructeur.
